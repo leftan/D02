@@ -33,6 +33,29 @@
 # A print statement with no argument ends the current line and 
 # goes to the next line.
 
+def do_twice(f):
+	f()
+	f()
+
+def do_four(f):
+	do_twice(f)	
+	do_twice(f)
+
+def border_two():
+	print(('+ ' + '- '*4)*2 +'+')
+
+def middle_two():
+	print(('| ' + '  '*4)*2 + '|')
+
+def half_grid_two():
+	border_two()
+	do_four(middle_two)
+
+def two_by_two():
+	do_twice(half_grid_two)
+	border_two()
+
+
 
 
 # (2) Write a function that draws a similar grid with four rows and four columns.
@@ -41,13 +64,19 @@
 # Body
 
 
+def border_four():
+	print(('+ ' + '- '*4)*4 +'+')
 
+def middle_four():
+	print(('| ' + '  '*4)*4 + '|')
 
+def quarter_grid_four():
+	border_four()
+	do_four(middle_four)
 
-
-
-
-
+def four_by_four():
+	do_four(quarter_grid_four)
+	border_four()
 
 
 
@@ -60,7 +89,8 @@ def main():
     four_by_four()
     """
     print("Hello World!")
-    
+    two_by_two()
+    four_by_four()
 
 
 

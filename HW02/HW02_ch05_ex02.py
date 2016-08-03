@@ -21,10 +21,22 @@
 # Write your functions below:
 # Body
 
+def check_fermat(a, b, c, n):
+	'''a, b, c, n: int
+	return check Fermat's Last Theorem
+	'''
 
+	if n > 2 and a**n + b**n == c**n:
+		print('Holy smokes, Fermat was wrong!')
+	else: 
+		print("No, that doesn't work")
 
-
-
+def check_fermat_ints():
+	a = int(input('a = '))
+	b = int(input('b = '))
+	c = int(input('c = '))
+	n = int(input('n = '))
+	check_fermat(a, b, c, n)
 
 
 
@@ -34,12 +46,13 @@
 def main():
     """Call your function within this function.
     When complete have one function call in this function:
-    check_fermat_ints(1,2,3,4)
+    check_fermat_ints()
     and two functions defined in the body:
     check_fermat_ints()
     check_fermat()
     """
     print("Hello World!")
+    check_fermat_ints()
 
 
 
